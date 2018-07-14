@@ -49,6 +49,7 @@ public class DirectedGraph {
 		if(edge.destination.dist>edge.source.dist+edge.weight) {
 			System.out.println("relaxed  "+edge);
 			edge.destination.dist=edge.source.dist+edge.weight;
+			edge.destination.parent=edge.source;
 		}
 	}
 	public boolean bellmanFord(Vertex root) {
