@@ -13,6 +13,8 @@ public class BinaryTreeTest {
 		tree.add(16);
 		tree.add(25);
 		tree.add(6);
+		tree.add(10);
+
 		/*tree.add(1);
 		tree.add(12);
 		tree.add(13);

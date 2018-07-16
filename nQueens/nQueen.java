@@ -39,14 +39,19 @@ class nQueen{
 	}
 
 	public static void main(String[] args) {
+		System.out.println("Enter board size: ");
 		Scanner in = new Scanner(System.in);
 		int boardSize = in.nextInt();
 		nQueen obj = new nQueen(boardSize);
+		try {
 		obj.placeQueen(0);
+		}catch(Exception e) {
+			System.out.println("Finished");
+		}
 		System.out.println(obj.queens.size());
 	}
 
-	private void placeQueen(int row) {
+	private void placeQueen(int row) throws Exception{
 		// TODO Auto-generated method stub
 		System.out.println(this.counter++);
 		for(int column=0;column<this.boardSize;column++) {
@@ -57,14 +62,19 @@ class nQueen{
 				//System.out.println(queen);
 				this.queens.add(queen);
 				this.updatePositions(row,column,false);
+				
 				if(row==this.boardSize-1) {
 					Iterator<Queen> it = this.queens.iterator();
 					while(it.hasNext()) {
 						System.out.println(it.next());
 					}
-					return;
+					throw new Exception();
 				}else {
+					try {
 					this.placeQueen(row+1);
+					}catch(Exception e) {
+						throw new Exception();
+					}
 				}
 				this.updatePositions(row, column, true);
 				this.queens.removeLast();
