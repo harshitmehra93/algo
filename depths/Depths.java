@@ -20,7 +20,7 @@ public class Depths {
 		tree.checkDepths(0,tree.root);
 		tree.preOrder(tree.root);
 		System.out.println("Max Depth   :"+tree.maxDepth(tree.root));
-		LinkedList<BinaryTreeNode<Integer>>[] listOfNodes[] = new LinkedList<BinaryTreeNode<Integer>>[tree.maxDepth(tree.root)];
+		LinkedList<BinaryTreeNode<Integer>>[] listOfNodes = new LinkedList<BinaryTreeNode<Integer>>[tree.maxDepth(tree.root)];
 		
 	}
 
